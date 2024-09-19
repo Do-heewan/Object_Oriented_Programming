@@ -11,20 +11,28 @@ public class exam1_5 {
         String op = s.next();
         int op2 = s.nextInt();
 
+        int result = 0;
+
         switch(op) {
             case "+":
-                System.out.printf("%d %s %d의 결과는 %d", op1, op, op2, op1 + op2);
+                op = "+";
+                result = op1 + op2; 
                 break;
             case "-":
-                System.out.printf("%d %s %d의 결과는 %d", op1, op, op2, op1 - op2);
+                op = "-";
+                result = op1 - op2; 
                 break;
             case "*":
-                System.out.printf("%d %s %d의 결과는 %d", op1, op, op2, op1 * op2);
+            op = "*";
+                result = op1 * op2;
                 break;
             case "/":
-                System.out.printf("%d %s %d의 결과는 %d", op1, op, op2, op1 / op2);
+            op = "/";
+            result = op1 / op2; 
                 break;
         }
+
+        System.out.printf("%d %s %d의 결과는 %d", op1, op, op2, result);
 
         s.close();
     }
