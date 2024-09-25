@@ -1,3 +1,5 @@
+// eclipse에서 명령형 인자를 받아 평균을 구하는 프로그램
+
 package ch03;
 
 public class week3_7 {
