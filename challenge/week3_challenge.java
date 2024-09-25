@@ -7,18 +7,17 @@ import java.util.Arrays;
 
 public class week3_challenge {
     public static void main(String[] args) {
+        int userLotto[] = new int[6];
+
+        System.out.println("로또 번호를 입력하시오. (1 ~ 45 사이의 숫자, 중복 없이) : ");
         Scanner s = new Scanner(System.in);
 
-        // 사용자 로또 생성
-        int userLotto[] = new int[6];
+        // 사용자 로또 번호 입력 받기
         for (int i = 0; i < userLotto.length; i++) {
-            System.out.print("로또 번호를 입력하시오. (1 ~ 45 사이의 숫자, 중복 없이) : ");
-            
             int num = s.nextInt();
             userLotto[i] = num;
 
-            // 입력 숫자 제한 (1 ~ 45 사이의 숫자)
-            if (num <= 45 && num > 0) { 
+            if (num <= 45 && num > 0) {
                 // 중복 확인
                 if (i >= 1) {
                     for (int j = 0; j < i; j++) {
@@ -36,13 +35,14 @@ public class week3_challenge {
             }
         }
 
-        // 사용자 번호 정렬
         Arrays.sort(userLotto);
+        System.out.println("사용자 번호 : " + Arrays.toString(userLotto));
+
+        int winningLotto[] = new int[6];
 
         // 당첨 로또 생성
-        int winningLotto[] = new int[6];
         for (int i = 0; i < winningLotto.length; i++) {
-            winningLotto[i] = (int)(Math.random() * 44 + 1); // (0 ~ 44 사이의 수 + 1) => 1 ~ 45 사이의 숫자가 생성되도록 한다.
+            winningLotto[i] = (int)(Math.random() * 44 + 1);
 
             // 중복 확인
             for (int j = 0; j < i; j++) {
@@ -52,14 +52,9 @@ public class week3_challenge {
             }
         }
         
-        // 당첨 번호 정렬
         Arrays.sort(winningLotto);
-
-        // 로또 번호 출력
-        System.out.println("사용자 번호 : " + Arrays.toString(userLotto));
         System.out.println("당첨번호 : " + Arrays.toString(winningLotto));
 
-        // 중복 갯수와 등수 저장
         int count = 0;
         String score;
 
@@ -72,23 +67,16 @@ public class week3_challenge {
         }
 
         // 중복 갯수에 따라 등수 판별
-        switch(count) {
-            case(6):
-                score = "1등";
-                break;
-            case(5):
-                score = "2등";
-                break;
-            case(4):
-                score = "3등";
-                break;
-            case(3):
-                score = "4등";
-                break;
-            default:
-                score = "꽝";
-                break;
-        }
+        if (count == 6)
+            score = "1등";
+        else if (count == 5)
+            score = "2등";
+        else if (count == 4)
+            score = "3등";
+        else if (count == 3)
+            score = "4등";
+        else
+            score = "꽝";
 
         System.out.printf("%s입니다. 일치하는 번호가 %d개 입니다." , score, count);
         s.close();
