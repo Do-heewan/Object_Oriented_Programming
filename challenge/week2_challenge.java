@@ -2,7 +2,7 @@ package challenge;
 
 import java.util.Scanner;
 
-public class week2 {
+public class week2_challenge {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("현재 시간을 입력하시오 (HH 형식, 00 ~ 23) : "); // 00시 부터 23시 까지 입력 받도록 한다.
