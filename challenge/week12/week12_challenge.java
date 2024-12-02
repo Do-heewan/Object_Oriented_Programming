@@ -50,7 +50,7 @@ class Rect implements Shape {
     }
 }
 
-public class week12_challenge {
+public class Week12_challenge {
     public static void main(String[] args) {
         Shape list[] = new Shape[3];
         list[0] = new Circle(5);
