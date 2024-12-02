@@ -1,3 +1,5 @@
+// 영화관 좌석 예약 시스템
+
 package challenge;
 
 import java.util.Scanner;
@@ -101,7 +103,7 @@ class MovieTheater {
     }
 }
 
-public class week4_challenge {
+public class Week4_challenge {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
