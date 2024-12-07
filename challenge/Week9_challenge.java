@@ -112,6 +112,7 @@ public class Week9_challenge extends JFrame implements ActionListener{
         }
     }
 
+    // 후위 연산식으로 변경
     public static String convPostfix(String infix){
         char c = ' ';
         Stack<Character> opStack = new Stack<Character>();
@@ -184,6 +185,7 @@ public class Week9_challenge extends JFrame implements ActionListener{
         return sb.toString();
     }
 
+    // 후위 연산식 계산
     public static double postfixCalculate(String postfix){
         Stack<String> stack = new Stack<String>();
         char c = ' ';
@@ -228,6 +230,7 @@ public class Week9_challenge extends JFrame implements ActionListener{
         return Double.valueOf(stack.pop().toString());
     }
 
+    // 버튼 클릭 이벤트 처리
     @Override
     public void actionPerformed(ActionEvent e) {
         String btText = ((JButton)e.getSource()).getText();
@@ -249,7 +252,7 @@ public class Week9_challenge extends JFrame implements ActionListener{
                 break;
 
             default:
-                this.input.setText(this.input.getText() + btText);
+                this.input.setText(this.input.getText() + btText); // 입력 받은 숫자 또는 연산자 출력
                 break;
         }
     }
